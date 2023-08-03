@@ -1,8 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { sub } from "date-fns";
 
 const initialState=[
-    {id: '1', title: 'Learn Redux Toolkit', content: "There are many good things in redux toolkit."},
-    {id: '2', title: 'Learn React', content: "There are many good things in react."}
+    {id: '1',
+     title: 'Learn Redux Toolkit',
+     content: "There are many good things in redux toolkit.",
+     date: sub(new Date(), {minutes: 10}).toISOString()
+    },
+    {id: '2',
+    title: 'Learn React',
+    content: "There are many good things in react.",
+    date: sub(new Date(), {minutes: 5}).toISOString()
+    }
 ]
 
 

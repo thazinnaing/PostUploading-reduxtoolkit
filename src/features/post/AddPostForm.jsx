@@ -11,6 +11,7 @@ const initialState={
     title: "",
     content: "",
     userId: "",
+    date: ""
 
 }
 
@@ -30,6 +31,7 @@ const AddPostForm=()=>{
         dispatch(postAdded({
             ...post,
             id: nanoid(),
+            date: new Date().toISOString()
         }))
         setPost(initialState)
     }

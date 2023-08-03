@@ -12,7 +12,7 @@ const PostsList = ()=>{
         <article key={post.id}>
             <h3>{post.title}</h3>
             <p>{post.content}</p>
-            <p> <PostAuthor userId={post.userId}/> </p>
+            <p> <PostAuthor userId = {post.userId} /> </p>
 
 
         </article>
