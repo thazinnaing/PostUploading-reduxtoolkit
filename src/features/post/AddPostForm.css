@@ -1,0 +1,27 @@
+section{
+    display: flex;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+input{
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+}
+textarea{
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+}
+button{
+    height: 35px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+select{
+    height: 40px;
+}

@@ -1,0 +1,16 @@
+section{
+    display:  flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px;
+}
+article{
+    border: 1px solid black;
+    width: 400px;
+    height: 150px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 15px;
+}
