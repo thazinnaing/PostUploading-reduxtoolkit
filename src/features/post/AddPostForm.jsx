@@ -2,7 +2,7 @@ import {useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import { postAdded } from "./postSlice";
-import "./AddPostForm.css";
+import "../../css/AddPostForm.css";
 import { selectAllUsers } from "../users/userSlices";
 
 
