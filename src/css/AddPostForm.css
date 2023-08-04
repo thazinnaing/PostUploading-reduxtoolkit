@@ -1,6 +1,6 @@
 section{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
 }
 form{
     display: flex;
@@ -17,7 +17,7 @@ textarea{
     padding: 10px;
     font-size: 16px;
 }
-button{
+.addButton{
     height: 35px;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;

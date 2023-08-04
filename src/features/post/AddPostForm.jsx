@@ -1,6 +1,5 @@
 import {useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { nanoid } from "@reduxjs/toolkit";
 import { postAdded } from "./postSlice";
 import "../../css/AddPostForm.css";
 import { selectAllUsers } from "../users/userSlices";
@@ -29,9 +28,7 @@ const AddPostForm=()=>{
 
     const onClickAddPost=()=>{
         dispatch(postAdded({
-            ...post,
-            id: nanoid(),
-            date: new Date().toISOString()
+            ...post
         }))
         setPost(initialState)
     }
@@ -78,6 +75,7 @@ const AddPostForm=()=>{
                 
                 <button 
                     type="button" 
+                    className="addButton"
                     disabled= {!addAvailable}
                     onClick={onClickAddPost}
                 >
