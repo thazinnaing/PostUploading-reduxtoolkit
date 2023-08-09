@@ -1,6 +1,6 @@
 import {useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { postAdded } from "./postSlice";
+import { addNewPost } from "./postSlice";
 import "../../css/AddPostForm.css";
 import { selectAllUsers } from "../users/userSlices";
 
@@ -15,9 +15,12 @@ const initialState={
 const AddPostForm=()=>{
    
     const [post, setPost]= useState(initialState);
-    const dispatch = useDispatch();
+    const [addRequestStatus, setAddRequestStatus] = useState("idle")
 
-     const users= useSelector(selectAllUsers)  
+    const dispatch = useDispatch();
+    const users= useSelector(selectAllUsers)  
+
+    const addAvailable= [post?.title, post?.body, post?.userId].every(Boolean) && addRequestStatus === "idle";
 
     const onChangedInput = (e)=>{
         const {name, value} = e.target;
@@ -25,17 +28,27 @@ const AddPostForm=()=>{
     }
 
     const onClickAddPost=()=>{
-        dispatch(postAdded({
-            ...post
-        }))
-        setPost(initialState)
+        if(addAvailable){
+            try{
+                setAddRequestStatus("pending")
+                dispatch(addNewPost(post)).unwrap()
+
+                setPost(initialState)
+            }
+            catch(err){
+                console.error("Failed to save the post", err)
+            }
+            finally{
+                setAddRequestStatus("idle")
+            }
+        }
     }
 
     const usersOptions= users.map(user=>{
         return(<option key={user.id} value={user.id}> {user.name} </option>)
     })
 
-    const addAvailable= Boolean(post?.title) && Boolean(post?.body) && Boolean(post?.userId)
+    
 
 
     return(
