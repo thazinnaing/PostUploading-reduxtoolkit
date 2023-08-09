@@ -6,11 +6,9 @@ import { selectAllUsers } from "../users/userSlices";
 
 
 const initialState={
-    id: null,
     title: "",
-    content: "",
-    userId: "",
-    date: ""
+    body: "",
+    userId: null
 
 }
 
@@ -37,7 +35,7 @@ const AddPostForm=()=>{
         return(<option key={user.id} value={user.id}> {user.name} </option>)
     })
 
-    const addAvailable= Boolean(post?.title) && Boolean(post?.content) && Boolean(post?.userId)
+    const addAvailable= Boolean(post?.title) && Boolean(post?.body) && Boolean(post?.userId)
 
 
     return(
@@ -59,15 +57,15 @@ const AddPostForm=()=>{
                     name="userId" 
                     onChange={onChangedInput}
                 >
-                    <option value=""></option>
+                    <option></option>
                     {usersOptions}
                 </select>
 
-                <label htmlFor="content">Content:</label>
+                <label htmlFor="body">Content:</label>
                 <textarea
                     type = "text"
-                    name = "content"
-                    value = {post?.content}
+                    name = "body"
+                    value = {post?.body}
                     required
                     onChange={onChangedInput}
 
