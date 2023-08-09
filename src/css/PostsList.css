@@ -1,19 +1,19 @@
 section{
     display:  flex;
     flex-direction: column;
-    gap: 20px;
     margin: 30px;
+    gap: 20px;
     justify-content: center;
+    align-items: center;
 }
 article{
     border: 1px solid black;
     width: 420px;
-    height: 200px;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
     border-radius: 15px;
+    gap: 15px;
 }
 .reactionButton{
     margin-right: 15px;
@@ -22,11 +22,11 @@ article{
     border: none;
     background-color: white;
  }
+ .link{
+    text-decoration: none;
+ }
 
  @media screen and (max-width: 480px){
-    section{
-        margin: 15px;
-    }
     article{
         width: 100%;
     }
@@ -34,5 +34,4 @@ article{
         margin-right: 13px;
         letter-spacing: 2.5px;
     }
-
  }

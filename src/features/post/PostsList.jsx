@@ -24,7 +24,6 @@ const PostsList = ()=>{
     }
 
     else if(postStatus=== "succeeded"){
-        console.log("ppppp");
         const orderedPosts = posts.slice().sort((a,b)=> b.date.localeCompare(a.date))
         console.log("orderPosts", orderedPosts);
         content = orderedPosts.map(post=>(
@@ -39,7 +38,6 @@ const PostsList = ()=>{
 
     return(
         <section>
-            <h2>Posts</h2>
             {content}
         </section>
 
