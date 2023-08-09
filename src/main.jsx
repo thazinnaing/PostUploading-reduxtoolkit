@@ -4,6 +4,10 @@ import App from './App.jsx'
 import './index.css'
 import { Provider } from 'react-redux'
 import { store } from './app/store.jsx'
+import { fetchUsers } from './features/users/userSlices.jsx'
+
+
+store.dispatch(fetchUsers());
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
