@@ -25,6 +25,11 @@ article{
  .link{
     text-decoration: none;
  }
+ .singlePost{
+    margin: 20px;
+ }
+ 
+ 
 
  @media screen and (max-width: 480px){
     article{

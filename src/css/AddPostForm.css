@@ -1,4 +1,5 @@
 .addPostSection{
+    margin-top: 30px;
     display: flex;
     flex-direction: column; 
     width: 450px;
