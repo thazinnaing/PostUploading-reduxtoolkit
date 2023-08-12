@@ -21,10 +21,17 @@ textarea{
     padding: 10px;
     font-size: 16px;
 }
-.addButton{
+.addButton, .deleteButton{
     height: 35px;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
+}
+.deleteButton{
+    background-color: brown;
+    border: none;
+}
+.deleteButton:hover{
+    background-color: rgb(219, 82, 82);
 }
 select{
     height: 40px;
