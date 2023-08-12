@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 const PostExcerpt = ({post})=>{
     return(
         <article key={post.id}>
-            <h3>{post.title}</h3>
+            <h2>{post.title}</h2>
             <p>{post.body}</p>
             <p> 
-                <Link to={`post/${post.id}`} className="link">View Post &nbsp;</Link>
+                <Link to={`post/${post.id}`} className="Link">View Post &nbsp;</Link>
                 <PostAuthor userId = {post.userId} /> 
                 <TimeAgo timeStamp={post.date} />
             </p>

@@ -22,8 +22,9 @@ article{
     border: none;
     background-color: white;
  }
- .link{
+ .Link{
     text-decoration: none;
+
  }
  .singlePost{
     margin: 20px;

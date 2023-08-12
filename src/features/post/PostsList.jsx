@@ -12,6 +12,7 @@ const PostsList = ()=>{
 
     useEffect(()=>{
         if (postStatus === "idle"){
+            console.log("Post status, firstTime123");
             dispatch(fetchPosts())
         }
     },[postStatus])

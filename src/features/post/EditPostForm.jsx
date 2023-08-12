@@ -1,27 +1,38 @@
+
 import {useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addNewPost } from "./postSlice";
+import { updatePost, selectPostById } from "./postSlice";
 import "../../css/AddPostForm.css";
 import { selectAllUsers } from "../users/userSlices";
-import { useNavigate } from "react-router-dom";
+
+import { useParams, useNavigate } from "react-router-dom";
 
 
-const initialState={
-    title: "",
-    body: "",
-    userId: null
-}
+const EditPostForm=()=>{
+    
+    const {postId} = useParams();
+    const postById = useSelector((state)=> selectPostById(state, Number(postId)));
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const users = useSelector(selectAllUsers) ;
 
-const AddPostForm=()=>{
+    const initialState={
+        title: postById?.title,
+        body: postById?.body,
+        userId: postById?.userId
+    }
 
-    const navigate= useNavigate();
-   
     const [post, setPost]= useState(initialState);
     const [addRequestStatus, setAddRequestStatus] = useState("idle")
 
-    const dispatch = useDispatch();
-    const users= useSelector(selectAllUsers)  
-
+    if(!postById){
+        return(
+            <section>
+                <h2>Post Not Found!</h2>
+            </section>
+        )
+    }
+    
     const addAvailable= [post?.title, post?.body, post?.userId].every(Boolean) && addRequestStatus === "idle";
 
     const onChangedInput = (e)=>{
@@ -32,11 +43,11 @@ const AddPostForm=()=>{
     const onClickAddPost=()=>{
         if(addAvailable){
             try{
-                setAddRequestStatus("pending");
-                dispatch(addNewPost(post)).unwrap();
+                setAddRequestStatus("pending")
+                dispatch(updatePost({...post, id: postById.id, reactions: postById.reactions})).unwrap()
 
-                setPost(initialState);
-                navigate(`/`);
+                setPost({...post, title: "", body: "", userId: null})
+                navigate(`/post/${postId}`)
             }
             catch(err){
                 console.error("Failed to save the post", err)
@@ -53,7 +64,7 @@ const AddPostForm=()=>{
 
     return(
         <section className="addPostSection">
-            <h2>Add a New Post</h2>
+            <h2>Edit Post</h2>
             <form>
                 <label htmlFor="title">Post Title</label>
                 <input 
@@ -64,10 +75,11 @@ const AddPostForm=()=>{
                     onChange={onChangedInput}
                 />
 
-                <label htmlFor="postUser">Author:</label>
+                <label htmlFor="postAuthor">Author:</label>
                 <select 
-                    id="postUser" 
+                    id="postAuthor" 
                     name="userId" 
+                    defaultValue={post?.userId}
                     onChange={onChangedInput}
                 >
                     <option></option>
@@ -98,4 +110,4 @@ const AddPostForm=()=>{
 
 }
 
-export default AddPostForm;
+export default EditPostForm;
