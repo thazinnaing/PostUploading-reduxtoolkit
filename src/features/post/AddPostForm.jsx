@@ -56,7 +56,7 @@ const AddPostForm = () => {
 
   return (
     <section className="addPostSection">
-      <h2>Add a New Post</h2>
+      <h2>Add New Post</h2>
       <form>
         <label htmlFor="title">Post Title</label>
         <input

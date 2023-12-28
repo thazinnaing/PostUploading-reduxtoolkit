@@ -1,13 +1,14 @@
+.header,
 .header-container{
     width: 100%;
     display: flex;
+}
+.header-container{
     height: 70px;
     overflow-x: hidden;
 }
 .header{
-    width: 100%;
     background-color: lightgray;
-    display: flex;
     overflow-x: hidden;
     justify-content: space-between;
     align-items: center;
