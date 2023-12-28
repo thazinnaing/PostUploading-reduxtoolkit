@@ -5,14 +5,13 @@
 }
 .header-container{
     height: 70px;
-    overflow-x: hidden;
 }
 .header{
     background-color: lightgray;
     overflow-x: hidden;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 .home-icon{
     font-size: 30px;
