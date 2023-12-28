@@ -6,7 +6,7 @@ import {
   getPostsError,
   getPostsStatus,
   fetchPosts,
-} from "./PostSlice";
+} from "./postSlice";
 import { useEffect } from "react";
 import "../../css/PostsList.css";
 import PostExcerpt from "./PostExcerpt";

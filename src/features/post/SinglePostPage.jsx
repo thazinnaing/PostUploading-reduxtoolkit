@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectPostById } from "./PostSlice";
+import { selectPostById } from "./postSlice";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import PostAuthor from "./PostAuthor";
