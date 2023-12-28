@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
-import PostExcerpt from "./PostExcerpt";
+import PostExcerpts from "./PostExcerpts";
 import {
   selectAllPosts,
   getPostsError,
@@ -37,7 +37,7 @@ const PostsList = () => {
       .sort((a, b) => b.date.localeCompare(a.date));
     console.log("orderPosts", orderedPosts);
     content = orderedPosts.map((post) => (
-      <PostExcerpt key={post.id} post={post} />
+      <PostExcerpts key={post.id} post={post} />
     ));
   } else if (postStatus === "failed") {
     content = <p>{postError}</p>;
