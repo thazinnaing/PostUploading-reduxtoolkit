@@ -5,7 +5,6 @@ import "../../css/AddPostForm.css";
 import { selectAllUsers } from "../users/userSlices";
 import { useNavigate } from "react-router-dom";
 
-
 const initialState={
     title: "",
     body: "",
@@ -95,7 +94,6 @@ const AddPostForm=()=>{
             </form>
         </section>
     )
-
 }
 
 export default AddPostForm;

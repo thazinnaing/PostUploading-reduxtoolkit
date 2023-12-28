@@ -4,9 +4,7 @@ const TimeAgo=({timeStamp})=>{
     let timeAgo = ""
     if(timeStamp){                                 // date string
         const date = parseISO(timeStamp)           // date obj
-        
         const timePeriod=formatDistanceToNow(date) // distance to now -- e.g. less than 1 minute
-
         timeAgo= `${timePeriod} ago`               // less than 1 minute + ago
     }
 
@@ -14,7 +12,6 @@ const TimeAgo=({timeStamp})=>{
         <span title={timeStamp}>
             &nbsp; <i>{timeAgo}</i>
         </span>
-
     )
 }
 

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectAllUsers } from "../users/userSlices";
-import { intlFormat } from "date-fns";
 
+// eslint-disable-next-line react/prop-types
 const PostAuthor=({userId})=>{
 
     const users = useSelector(selectAllUsers);
