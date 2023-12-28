@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
+import PostExcerpt from "./PostExcerpt";
 import {
   selectAllPosts,
   getPostsError,
@@ -9,7 +10,6 @@ import {
 } from "./postSlice";
 import { useEffect } from "react";
 import "../../css/PostsList.css";
-import PostExcerpt from "./PostExcerpt";
 import { useNavigate } from "react-router-dom";
 
 const PostsList = () => {
