@@ -6,10 +6,10 @@ import {
   getPostsError,
   getPostsStatus,
   fetchPosts,
-} from "./postSlice";
+} from "./PostSlice";
 import { useEffect } from "react";
 import "../../css/PostsList.css";
-import PostExcerpt from "./postExcerpt";
+import PostExcerpt from "./PostExcerpt";
 import { useNavigate } from "react-router-dom";
 
 const PostsList = () => {
@@ -44,8 +44,8 @@ const PostsList = () => {
   }
 
   return (
-    <section >
-      <div onClick={()=>navigate("/post")} className="add-post">
+    <section>
+      <div onClick={() => navigate("/post")} className="add-post">
         <FontAwesomeIcon className="add-icon" icon={faSquarePlus} />
         <button className="add-btn">Add New Post</button>
       </div>
