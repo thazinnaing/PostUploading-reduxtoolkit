@@ -1,6 +1,6 @@
 import PostAuthor from "./PostAuthor";
 import TimeAgo from "./TimeAgo";
-import ReactionButtons from "./reactionButton";
+import ReactionButtons from "./ReactionButtons";
 import "../../css/PostsList.css";
 import { Link } from "react-router-dom";
 

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import PostAuthor from "./PostAuthor";
 import TimeAgo from "./TimeAgo";
-import ReactionButtons from "./reactionButton";
+import ReactionButtons from "./ReactionButtons";
 
 const SinglePostPage = () => {
   const { postId } = useParams();
