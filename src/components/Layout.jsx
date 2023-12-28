@@ -4,12 +4,12 @@ import "../css/layout.css"
 
 const Layout=()=>{
     return(
-        <>
-        <Header />
-        <main className="App">
-            <Outlet />
-        </main>
-        </>
+        <div className="layout">
+            <Header />
+            <main className="app">
+                <Outlet />
+            </main>
+        </div>
     )
 }
 

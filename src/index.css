@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Raleway&display=swap');
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 body{
-  width: 100%;
+  width: 100vw;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  font-family: 'Playfair Display', serif;
+  font-family: 'Raleway', sans-serif;
 }
